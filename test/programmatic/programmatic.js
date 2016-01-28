@@ -46,6 +46,16 @@ describe('PM2 programmatic calls', function() {
     });
   });
 
+  it('should get the node version', function(done) {
+    setTimeout(function() {
+      pm2.describe(0, function(err, data) {
+        should(err).be.null;
+        data[0].pm2_env.node_version.should.eql(process.versions.node);
+        done();
+      });
+    }, 500);
+  });
+
   it('should start a script and force to launch it', function(done) {
     pm2.start(process.cwd() + '/test/fixtures/child.js', {
       force : true,
