@@ -735,7 +735,10 @@ commander.command('id <name>')
       process.exit(cst.ERROR_EXIT);
     }
 
+<<<<<<< HEAD
     console.log(id)
+=======
+>>>>>>> d9c1d75... Feature get id by name #1895
     process.exit(cst.SUCCESS_EXIT);
   });
 })
